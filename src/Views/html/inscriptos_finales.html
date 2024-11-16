@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="shortcut icon" href="../images/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <title>Instituto N°20 Profesores - Inscriptos Finales</title>
+</head>
+<body>
+    <nav class="menu">
+        <h2 class="nombre" id="nombreUsuario"></h2>
+        <img src="../images/logo.jpg" class="logo">
+    </nav>
+    <header class="linea"></header>
+    <h2>Finales</h2>
+    <div class="alumno-materia" id="materiasContainer"></div>
+    <!-- MODAL DE ALUMNO-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <table class="table-finales">
+                <thead class="thead-finales">
+                    <tr class="tr-finales">
+                        <th class="thPermiso">Perm</th>
+                        <th class="thDni">DNI</th>
+                        <th class="thNombre">Nombre</th>
+                        <th class="thAñoCursada">Año</th>
+                        <th class="thLibre">Libre</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-finales" id="tablaFinal">
+                    <h3>Inscriptos</h3>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button class="button-salir" id="volver">Volver</button>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="../js/cargarAlumnoFinales.js"></script>
+    <script src="../js/back.js"></script>
+</body>
+</html>

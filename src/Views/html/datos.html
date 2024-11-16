@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+    <title>Instituto N°20 Profesores - Materias</title>
+</head>
+
+<body>
+    <nav class="menu">
+        <h2 class="nombre" id="nombreUsuario"></h2>
+        <img src="../images/logo.jpg" class="logo">
+    </nav>
+    <header class="linea"></header>
+    <h3>TUS DATOS</h3>
+    <table class="table-datos">
+        <thead class="thead-datos">
+            <tr class="tr-datos">
+                <th class="th-datos">Nombre</th>
+                <th class="th-datos">Documento</th>
+                <th class="th-datos">Postal</th>
+                <th class="th-datos">Domicilio</th>
+                <th class="th-datos">Telefono</th>
+                <th class="th-datos">Localidad</th>
+            </tr>
+        </thead>
+        <tbody class="tbody-datos" id="infoProfesor">
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="clickable-div" onclick="toggleDiv()">Modificar Datos</div>
+        <div id="hidden-div" class="hidden-content">
+                <div class="mod-datos" id="tabla-profesor">
+                        <div class="input">
+                            <label>Nombre: </label><input type="text" name=Nombre id="nombreDato" class="credentials" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Documento: </label><input type="text" name=Documento id="documentoDato" class="credentials" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Cod.Postal: </label><input type="text" name=Postal id="postalDato" class="credentials">
+                        </div>
+                        <div class="input">
+                            <label>Domicilio: </label><input type="text" name=Domicilio id="domicilioDato" class="credentials">
+                        </div>
+                        <div class="input">
+                            <label>Telefono: </label><input type="text" name=Telefono id="telefonoDato" class="credentials">
+                        </div>
+                        <div class="input">
+                            <label>Localidad: </label><input type="text" name=Localidad id="localidadDato" class="credentials">
+                        </div>
+                        
+                        <button class="button" id="guardar-profesores">Confirmar cambios</button>
+                </div>
+        </div>
+         <!-- Nueva sección para cambiar la contraseña -->
+        <div class="clickable-div" onclick="togglePasswordDiv()">Cambiar Contraseña</div>
+        <div id="password-div" class="hidden-content">
+            <div class="mod-password">
+                <div class="input">
+                    <label>Contraseña Actual: </label><input type="password" id="oldPassword" class="credentials">
+                </div>
+                <div class="input">
+                    <label>Nueva Contraseña: </label><input type="password" id="newPassword" class="credentials">
+                </div>
+                <div class="input">
+                    <label>Confirmar Contraseña: </label><input type="password" id="confirmPassword" class="credentials">
+                </div>
+                <button class="button" id="cambiar-contrasena">Cambiar Contraseña</button>
+            </div>
+        </div>
+</div>
+    </div>
+        <button class="button-salir" id="volver">Volver</button>
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    try {
+                        // Intenta obtener los datos del almacenamiento local
+                        const usuarioLogin = sessionStorage.getItem('userData');
+                        const usuarioDatos = sessionStorage.getItem('datosData');
+
+                        if (usuarioLogin) {
+                            // Si hay datos almacenados, se crea un nuevo objeto
+                            const user = JSON.parse(usuarioLogin);
+                            // Actualiza el contenido del elemento con el ID 'nombreUsuario'
+                            document.getElementById('nombreUsuario').textContent = user.Nombre || 'Nombre de Usuario';
+                        }
+
+                        if (usuarioDatos) {
+                            let datos = JSON.parse(usuarioDatos);
+                            document.getElementById('nombreDato').value = datos[0].Nombre || '';
+                            document.getElementById('documentoDato').value = datos[0].Documento || '';
+                            document.getElementById('postalDato').value = datos[0].Postal || '';
+                            document.getElementById('domicilioDato').value = datos[0].Domicilio || '';
+                            document.getElementById('telefonoDato').value = datos[0].Telefono || '';
+                            document.getElementById('localidadDato').value = datos[0].Localidad || '';
+
+                            // Asegúrate de que datos sea un array
+                            if (!Array.isArray(datos)) {
+                                datos = [datos];
+                            }
+
+                            // Obtén la referencia al cuerpo de la tabla
+                            const tbody = document.getElementById('infoProfesor');
+
+                            // Limpia el contenido actual del cuerpo de la tabla
+                            tbody.innerHTML = '';
+
+                            // Itera sobre cada dato y crea una fila para cada uno
+                            datos.forEach(dato => {
+                                const fila = tbody.insertRow();
+
+                                const propiedadesDatos = ['Nombre', 'Documento', 'Postal', 'Domicilio', 'Telefono', 'Localidad'];
+                                propiedadesDatos.forEach(propiedad => {
+                                    const celda = fila.insertCell();
+                                    celda.textContent = dato[propiedad];
+                                });
+                            });
+
+                        }
+                    } catch (error) {
+                        console.error('Error al cargar la página: ' + error);
+                    }
+                });
+            </script>
+
+            <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+            <script src="../js/script.js"></script>
+            <script src="../js/modificarDatos.js"></script>
+            <script src="../js/back.js"></script>
+</body>
+
+</html>

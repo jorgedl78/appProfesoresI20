@@ -1,0 +1,8 @@
+POST http://localhost:3000/profesorCambiarContrasena
+content-type: application/json
+
+{
+    "codigo": 447,
+    "oldPassword": "jorge",
+    "newPassword": "123"
+} 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Views/images/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./Views/css/style.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <title>Instituto N°20 Profesores</title>
+</head>
+<body>
+    <header class="titulo">
+        <img src="./Views/images/logo.jpg" class="logo-index">
+    </header>
+    <main>
+    <div class="main">
+        <h1 class="titulo">Instituto N°20</h1>
+        <form class="form">
+            <div class="input">
+                <input type="text" name="dni" placeholder="DNI" class="credentials">
+            </div>
+            <div class="input">
+                <input type="password" name="clave" placeholder="Contraseña" class="credentials">
+            </div>
+            <div class="input">
+                <input type="checkbox"><label class="recuerdame">Recuérdame</label>
+            </div>
+            <div class="contendor-spinner" id="spinner">
+                <div class="spinner"></div>
+            </div>
+            <button class="button" type="submit">Ingresar</button>
+        </form>
+    </div>
+</main>
+<footer>© Derechos reservados del ISFDyT N°20 | Created by 3º año Sistemas</footer>
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="./Views/js/sesion.js"></script>
+</body>
+</html>

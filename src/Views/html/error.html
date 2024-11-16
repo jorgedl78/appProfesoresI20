@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="shortcut icon" href="../images/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+    <title>Instituto N°20 Profesores - Inicio</title>
+</head>
+<body>
+    <nav class="menu">
+        <h2 class="nombre" id="nombreUsuario"></h2>
+        <img src="../images/logo.jpg" class="logo">
+    </nav>
+    <div class="linea"></div>
+    <main class="main-error">
+        <div class="contenedor-error">
+            <h2 class="error">Mensaje</h2>
+            <p class="mensaje-error">No existen mesas disponibles para este turno</p>
+        </div>
+    </main>
+    <button class="button-salir" id="volver">Volver</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Intenta obtener los datos del almacenamiento local
+                const userDataString = sessionStorage.getItem('userData');
+
+                if (userDataString) {
+                    // Si hay datos almacenados, se crea un nuevo objeto
+                    const userData = JSON.parse(userDataString);
+
+                    // Actualiza el contenido del elemento con el ID 'nombreUsuario'
+                    document.getElementById('nombreUsuario').textContent = userData.Nombre || 'Nombre de Usuario';
+                }
+            } catch (error) {
+                console.error('Error al cargar la página: ' + error);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="../js/back.js"></script>
+</body>
+</html>

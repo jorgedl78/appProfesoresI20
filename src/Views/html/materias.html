@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alertify.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <title>Instituto N°20 Profesores - Materias</title>
+</head>
+
+<body>
+    <nav class="menu">
+        <h2 class="nombre" id="nombreUsuario"></h2>
+        <img src="../images/logo.jpg" class="logo">
+    </nav>
+    <header class="linea"></header>
+    <h2>Cursadas</h2>
+    <div class="alumno-materia" id="materiasContainer"></div>
+    <!-- MODAL DE ALUMNO-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="tabla-deslizable">
+            <table class="table-finales">
+                <thead class="thead-finales">
+                    <tr>
+                        <th>Permiso</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-finales" id="tablaAlumnos">
+                    <h3>Alumnos</h3>
+
+                </tbody>
+            </table>
+            </div>
+            <button class="button-salir" id="cancelar-datos"> Cancelar</button>
+            <button class="button-salir" id="guardar-datos"> Guardar</button>
+        </div>
+    </div>
+    <button class="button-salir" id="volver">Volver</button>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="../js/cargarAlumnosMaterias.js"></script>
+    <script src="../js/cancelar.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/back.js"></script>
+</body>
+</html>

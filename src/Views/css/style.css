@@ -1,0 +1,673 @@
+/* COMIENZO DEL CSS PARA INDEX */
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    margin: 0;
+    background-attachment: fixed;
+    background-color: #388cfaaa;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+footer{
+    padding-top: 200px;
+}
+.logo{
+    border-radius: 350px;
+    width: 50%;
+}
+.main{
+    margin-top: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align:center;
+    font-size: 18px;
+    font-style: bold;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    border-color: black;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.input{
+    padding-top: 15px;
+}
+.credentials{
+    text-align: center;
+    border-radius: 15px;
+    height: 30px;
+    width: 250px;
+}
+.recuerdame{
+    padding-left: 5px;
+}
+.button {
+    margin-top: 15px;
+    /* background-color: #007bff; */
+    background-color: #0f3e7d;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button:hover{
+    background-color: rgb(3, 166, 254);
+    color: #333;
+}
+footer {
+    text-align: center;
+    padding: 20px; 
+    background-color: #f0f0f0;
+    position: fixed;
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+.contendor-spinner {
+    display: none;
+    position: absolute; /* Establece la posición relativa para el contenedor del spinner */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, .1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: black;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.main-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    box-shadow: #333;
+}
+.contenedor-error{
+    background-color: white;
+    border-radius: 15px;
+    height: 300px;
+    width: 300px;
+}
+.error{
+    color: red;
+    font-size: 25px;
+    padding: 20px;
+}
+.mensaje-error{
+    font-size: 25px;
+    padding: 10px;
+}
+
+/* FIN DEL CSS PARA INDEX */
+/* COMIENZO DEL CSS PARA HOME */
+.menu{
+    /* background-color: #0d3960; */
+    background-color: #3383ed;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.linea{
+    background-color: #fa8748;
+    height: 5px;
+}
+.menu .nombre{
+    color: white;
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+.menu .logo{
+    border-radius: 350px;
+    width: 15%;
+    align-content: flex-end;
+    max-width: 100%;
+    margin-right: 25px;
+}
+.main-menu{
+    margin-top: 25%;
+    margin-bottom: 50%;
+    text-align:center;
+    font-size: 18px;
+    font-style: bold;
+    border-radius: 15px;
+    border-color: black;
+}
+.center-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+}
+.center-div .button-menu{
+    margin-top: 15px;
+    background-color: #0f3e7d;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 350px;
+    height: 75px;
+}
+.button-salir{
+    margin-top: 50px;
+    background-color: #0f3e7d;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 150px;
+}
+.button-menu:hover{
+    background-color: rgb(3, 166, 254);
+    color: #333;
+}
+.button-salir:hover{
+    background-color: rgb(3, 166, 254);
+    color: #333;
+}
+.clickable-div:hover{
+    background-color: rgb(3, 166, 254);
+    color: #333;
+}
+/* FIN DE CSS DEL HOME */
+/* INICIO DE CSS PARA MATERIAS */
+* {
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #bebebe transparent;
+}
+#materiasContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.materia {
+    width: 500px;
+    background-color: #fff;
+    margin: 1rem 0rem;
+    border: 0.1px solid #fff;
+    border-radius: 5px;
+    padding: 0rem 0.2rem 0.3rem 0.3rem;
+}
+.materiaCard{
+    background-color: #fff;
+    /* margin: 1rem 0rem; */
+    border: 0.1px solid #fff;
+    border-radius: 5px;
+    padding: 0rem 0.2rem 0.3rem 0.3rem;
+}
+.materiaHeader {
+    position: relative;
+    display: flex;
+    margin: -0.5rem;
+}
+.materiaMain{
+    position: relative;
+    display: block;
+    margin: -0.5rem;
+    text-align: center;
+}
+.estudianteHeader {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+}
+.estudianteIcon {
+    display: flex;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    padding: 0.2rem;
+    height: 25px;
+}
+.estudianteIcon img {
+    margin-left: 0.2rem;
+    width: 25px;
+    height: 25px;
+}
+.pMateria{
+    align-items: center;
+    font-weight: bold;
+}
+.pCurso{
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-top: 10px;
+    display: flex;
+}
+
+.pCantidadInscriptos {
+    display: inline;
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    margin-right: 0.1rem;
+    color: #3383ed;
+    font-weight: bold;
+}
+.botonMateria{
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    margin-top:-2.5rem;
+}
+.imagenBoton{
+    height: 10px;
+    width: 10px;
+}
+.pMateria:hover{
+    color: #3383ed;
+    cursor: pointer;
+}
+.inputGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste automático de columnas */
+    gap: 15px; /* Espacio entre filas y columnas */
+    width: 100%;
+    max-width: 600px; /* Ancho máximo */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.inputGrid div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGrid label {
+    margin-bottom: 5px; /* Espacio entre label y input */
+    font-weight: bold; /* Negrita para los labels */
+}
+
+.inputGrid input {
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.inputGrid input:disabled {
+    background-color: #f5f5f5; /* Color de fondo para inputs deshabilitados */
+    cursor: not-allowed; /* Cursor para inputs deshabilitados */
+}
+/* agrandar un checkbox*/
+input[type="checkbox"] {
+    -ms-transform: scale(2.5); /* IE */
+    -moz-transform: scale(2.5); /* FF */
+    -webkit-transform: scale(2.5); /* Safari y Chrome */
+    -o-transform: scale(2.5); /* Opera */
+    padding: 10px;
+    margin-right: 15px;
+}
+
+
+
+/* MODAL ALUMNOS POR MATERIAS */
+.modal {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed; /* Fija el modal en la ventana del navegador */
+    z-index: 1; /* Establece la superposición del modal */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilita el desplazamiento si el contenido es demasiado grande */
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 15% auto; /* Margen superior e inferior automático y 15% desde los lados */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ancho del contenido del modal */
+    max-width: 1200px; /* Ancho máximo del contenido del modal */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.table-finales{
+    width: 100%;
+}
+.detallesAlumno{
+    display: block;
+    align-items: center;
+}
+/* Estilos para los inputs */
+.input-style {
+    width: 50%; /* Ancho completo */
+    padding: 5px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el borde en el ancho y alto */
+}
+
+/* Estilos para los checkboxes */
+.checkbox-style {
+    margin-right: 15px; /* Margen derecho */
+}
+
+/* FIN DE CSS DEL MATERIAS */
+/* INICIO DE CSS PARA INSCRIPTOS FINALES */
+
+.thPermiso{
+    width: 11%;
+}
+.thDni{
+    width: 15%;
+}
+.thAñoCursada{
+    width: 8%;
+}
+.nombreAlumno{
+    text-align: left;
+}
+.thLibre, .thDni, .thPermiso, .thAñoCursada{
+    text-align: center;
+}
+td .datosAlumnosFinales{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.documento, .permiso, .cursada{
+    text-align: center;
+}
+/* FIN DE CSS DEL FINALES */
+/*PANTALLA DE DATOS CSS*/
+.clickable-div {
+    margin: 10px;
+    background-color: #0f3e7d;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+.hidden-content {
+    display: none;
+    color: #333;
+    padding: 10px;
+}
+.table-datos{
+    width: 100%;
+    margin: 40px;
+    border-collapse: collapse;
+    padding: 15px;
+    margin: auto;
+    text-align: right;
+}
+th, td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-right: 10px;
+    text-align: left;
+}
+tr:nth-of-type(odd) {
+    background-color: lightgray;
+}
+th{
+    background-color: #0f3e7d;
+    color: white;
+    font-weight: bold;
+}
+.table-datos .tbody-datos tr:hover{
+    background-color: #0f3e7d;
+    color: antiquewhite;
+}
+.table-datos .tbody-datos td:hover{
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.mod-datos{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    text-align:center;
+    font-size: 18px;
+    font-style: bold;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    border-color: black;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+/* MEDIA QUERY DE CSS*/
+/* Estilos base para todos los dispositivos */
+@media screen and (max-width: 880px), (min-device-width: 880px) and (max-device-width: 880px){
+    .logo-index {
+        max-width: 200px;
+        height: 200px;
+        border-radius: 350px;
+        padding: 20px;
+    }
+    .main{
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center; 
+    }
+    .main-menu{
+        max-width: 600px; 
+        margin: 0 auto;
+        padding: 20px; 
+        text-align: center;      
+   }
+}
+@media screen and (max-width: 600px), (min-device-width: 880px) and (max-device-width: 1024px){ 
+    *{
+        font-size: 14px;
+    }
+    footer {
+        text-align: center;
+        font-size: 18px;
+        padding: 10px; 
+        background-color: #f0f0f0;
+        width: 100%; 
+    }
+    .main-menu{
+        max-width: 600px; 
+        margin: 0 auto;
+        padding: 20px; 
+        text-align: center;
+    }
+    .center-div .button-menu{
+        margin-top: 15px;
+        background-color: #0f3e7d;
+        border-radius: 5px;
+        margin-bottom: 10px; 
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 350px;
+        height: 75px;
+    }
+    .logo-index {
+        max-width: 200px;
+        height: 200px;
+        border-radius: 350px;
+    }
+    .button-menu{
+        max-width: 80%;
+        max-height: 80%;
+    }
+    .inputGrid {
+        grid-template-columns: 1fr; /* Una columna en pantallas más pequeñas */
+        gap: 10px; /* Espacio reducido entre filas y columnas */
+    }
+    /*Modal de pantallas*/
+    .modal-content {
+        background-color: #fefefe; 
+        margin: 15% auto; 
+        padding: 10px;
+        border: 1px solid #888;
+        width: 90%; 
+        max-width: 1200px;
+    }
+    /*Pantalla de Materias*/
+    .materia{
+        max-width: 90%;
+    }
+    .materiaMain{
+        display: grid;
+    }
+    .pMateria{
+        text-align: center;
+    }
+    /*Pantalla de Finales*/
+    .table-finales .thead-finales .tbody-finales{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .thPermiso{
+        width: 5%;
+    }
+    .thDni{
+        width: 7%;
+    }
+    .thAñoCursada{
+        width: 8%;
+    }
+    .nombreAlumno{
+        text-align: left;
+    }
+    .thLibre, .thDni, .thPermiso, .thAñoCursada{
+        text-align: left;
+    }
+    .cursada, .thAñoCursada{
+        display: none;
+    }
+    /*Pantalla de datos*/
+    .table-datos .tbody-datos td{
+        display: block;
+        width: 100%;
+    }
+    .table-datos .tbody-datos td:before{
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    .thead-datos tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr{
+        border: 1px solid #ccc;
+    }
+    td{
+        border-bottom: 1px solid black;
+        position: relative;
+    }
+    .credentials{
+        max-width: 85%;
+        max-height: 80%;
+    }
+}
+
+/* Media query para pantallas de laptops y PCs */
+@media only screen and (min-width: 1024px) {
+
+    .logo-index {
+        max-width: 300px;
+        height: 300px;
+        border-radius: 350px;
+    }
+    main{
+        padding: 40px;
+    }
+    .main{
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center; 
+    }
+    .main-menu{
+        max-width: 500px; 
+        margin: 0 auto;
+        padding: 30px; 
+        text-align: center;      
+   }
+   footer{
+    text-align: center;
+    margin-top: 20px;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+    width: 100%;
+   }
+}
+/* Estilos para pantallas de 568px de ancho */
+@media screen and (max-width: 550px) {
+    .logo-index {
+        max-width: 200px;
+        height: 200px;
+        border-radius: 350px;
+    }
+    .main{
+        max-width: 200px;
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center; 
+    }
+    .main-menu{
+        max-width: 200px; 
+        margin: 0 auto;
+        padding: 50px; 
+        text-align: center;
+    }
+   
+    footer {
+        font-size: 10px;
+        text-align: center;
+        padding: 10px; 
+        background-color: #f0f0f0;
+        width: 100%; 
+    }
+}
+
+

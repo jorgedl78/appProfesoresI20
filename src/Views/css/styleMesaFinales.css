@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin; /* Para navegadores Firefox */
+    scrollbar-color: #bebebe transparent; /* Para navegadores Firefox */
+}
+
+*::-webkit-scrollbar {
+    width: 7px; /* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bebebe; /* Color del "pulgón" del desplazamiento */
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent; /* Color de fondo del desplazamiento */
+    border-radius: 5px;
+}
+
+body{
+    font-family: monospace;
+}
+
+.mesasContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailsMesa{
+    width: 90%;
+    background-color: #fff;
+    margin: 1rem 0rem;
+    border: 0.1px solid #fff;
+    border-radius: 5px;
+    padding: 0rem 0.2rem 0.3rem 0.3rem;
+}
+
+.summaryMesa{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.6s ease-out; 
+}
+
+.summaryMesa div{
+    display: flex;
+    justify-content: space-between;
+}
+.summaryMesa div div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pFecha, .pHora, .pMateria{
+    margin: 0;
+}
+.pFecha, .pHora{
+    margin-right: 1rem;
+}
+.pMateria{
+    margin-top: 1.2rem;
+}
+.pCantidadInscriptos {
+    display: inline;
+    margin-top: 0.20rem;
+    margin-left: 0.3rem;
+    margin-right: 0.1rem;
+    color: #3383ed;
+}
+
+.rotateIcon {
+    display: inline-block;
+    margin-right: 0.4rem;
+}
+.rotateIcon img{
+    margin-top: 1.3rem; 
+    width: 1rem;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+}
+.detailsMesa[open] .rotateIcon.open img{
+    transform: rotate(180deg);
+}
+
+.estudianteIcon {
+    display: flex;
+    margin-top: -0.4rem;
+    margin-right: -0.6rem;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    padding: 0.2rem;
+}
+.estudianteIcon img {
+    margin-left: 0.2rem;
+    width: 25px;
+    height: 25px;
+}
+
+.contenedorMesa {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.contenedorMesa.open {
+    max-height: 300px; 
+    transition: max-height 0.3s ease-in;
+}
+
+.tableMesa {
+    position: sticky;
+    top: 1;
+}
+
+.tableMesa, .tableAlumnos{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+}
+.tableMesa tr, .tableAlumnos tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+.tableMesa th, .tableMesa td, .tableAlumnos th, .tableAlumnos td{
+    font-size: 12px;
+    padding: 8px;
+    text-align: center;
+}
+.thPermiso{
+    width: 11%;
+}
+.thDni{
+    width: 15%;
+}
+.thAñoCursada{
+    width: 8%;
+}
+.tableAlumnos .tdNombreAlumno{
+    text-align: left;
+}
+.tableMesa thead th, .tableAlumnos thead th{
+    text-transform: uppercase;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
+.tableMesa tbody tr:hover, .tableAlumnos tbody tr:hover{
+    background-color: rgba(0, 110, 255, 0.2);
+}
+.tableMesa tbody td:hover, .tableAlumnos tbody td:hover{
+    background-color: rgba(0, 110, 255, 0.3);
+}
+.tableMesa td{
+    display: block;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+}
+.tableAlumnos td{
+    border: 1px solid #ddd;
+}
+.tableMesa td:last-child, .tableAlumnos td:last-child{
+    border-bottom: 0px;
+}
+.tableMesa td::before{
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    body{
+        font-size: 14px;
+    }
+    .detailsMesa{
+        width: 600px;
+    }
+    .tableMesa th, .tableMesa td, .tableAlumnos th, .tableAlumnos td{
+        font-size: 14px;
+    }
+}
+@media (min-width: 1024px){
+    *{
+        font-size: 16px;
+    }
+    .detailsMesa{
+        width: 700px;
+    }
+    .tableMesa th, .tableMesa td, .tableAlumnos th, .tableAlumnos td{
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,28 @@
+materias
+SELECT Carreras.Codigo AS Codigo_carrera, Carreras.Nombre AS Nombre_carrera, Materias.Curso, Materias.Codigo AS Materia_codigo, Materias.Nombre AS Materia_nombre, Divisiones.Division, Divisiones.Libre, Divisiones.Ano FROM ((Divisiones INNER JOIN Personal ON Divisiones.Profesor = Personal.Codigo) INNER JOIN Materias ON Divisiones.Materia = Materias.Codigo) INNER JOIN Carreras ON Materias.Carrera = Carreras.Codigo WHERE (((Divisiones.Ano)=(SELECT AñoMatriculacion FROM Parametros)) AND ((Personal.Codigo)=447)) ORDER BY Carreras.Nombre, Materias.Curso
+
+--node---
+materias
+SELECT Carreras.Codigo AS Codigo_carrera, Carreras.Nombre AS Nombre_carrera, Materias.Curso, Materias.Codigo AS Materia_codigo, Materias.Nombre AS Materia_nombre, Divisiones.Division, Divisiones.Libre, Divisiones.Ano FROM ((Divisiones INNER JOIN Personal ON Divisiones.Profesor = Personal.Codigo) INNER JOIN Materias ON Divisiones.Materia = Materias.Codigo) INNER JOIN Carreras ON Materias.Carrera = Carreras.Codigo WHERE (((Divisiones.Ano)=(SELECT AñoMatriculacion FROM Parametros)) AND ((Personal.Codigo)=${persona.Codigo})) ORDER BY Carreras.Nombre, Materias.Curso
+
+Mostrar mesas y inscriptos
+
+SELECT Mesas.Numero, Format(Mesas.Fecha, 'dd/mm/yyyy') as Fecha,  Format(Mesas.Hora, 'HH:MM') as Hora, Mesas.Titular as CodigoTitular, Mesas.Impresas, Carreras.Abreviatura as Carrera, Materias.Curso, Materias.Nombre as Materia, Personal.Nombre as Titular, Personal_1.Nombre as Integrante1, Personal_2.Nombre as Integrante2, Mesas.Lugar as Lugar, (SELECT Count(Inscripciones.Alumno) AS Total 
+					FROM Inscripciones
+				WHERE (((Inscripciones.Mesa)=Mesas.Numero) AND ((Inscripciones.FechaBorrado) Is Null))) as Inscriptos
+FROM (((Mesas INNER JOIN (Materias INNER JOIN Carreras ON Materias.Carrera = Carreras.Codigo) ON Mesas.Materia = Materias.Codigo) INNER JOIN Personal ON Mesas.Titular = Personal.Codigo) INNER JOIN Personal AS Personal_1 ON Mesas.Integrante1 = Personal_1.Codigo) INNER JOIN Personal AS Personal_2 ON Mesas.Integrante2 = Personal_2.Codigo
+WHERE (((Personal.Codigo)=447) AND ((Mesas.Turno)=8) AND ((Mesas.Ano)=2022)) OR (((Personal_1.Codigo)=447) AND ((Mesas.Turno)=8) AND ((Mesas.Ano)=2022)) OR (((Personal_2.Codigo)=447) AND ((Mesas.Turno)=8) AND ((Mesas.Ano)=2022))
+ORDER BY Mesas.Fecha
+
+
+--node--
+SELECT Mesas.Numero, Format(Mesas.Fecha, 'dd/mm/yyyy') as Fecha,  Format(Mesas.Hora, 'HH:MM') as Hora, Mesas.Titular as CodigoTitular, Mesas.Impresas, Carreras.Abreviatura as Carrera, Materias.Curso, Materias.Nombre as Materia, Personal.Nombre as Titular, Personal_1.Nombre as Integrante1, Personal_2.Nombre as Integrante2, Mesas.Lugar as Lugar, (SELECT Count(Inscripciones.Alumno) AS Total 
+					FROM Inscripciones
+				WHERE (((Inscripciones.Mesa)=Mesas.Numero) AND ((Inscripciones.FechaBorrado) Is Null))) as Inscriptos
+FROM (((Mesas INNER JOIN (Materias INNER JOIN Carreras ON Materias.Carrera = Carreras.Codigo) ON Mesas.Materia = Materias.Codigo) INNER JOIN Personal ON Mesas.Titular = Personal.Codigo) INNER JOIN Personal AS Personal_1 ON Mesas.Integrante1 = Personal_1.Codigo) INNER JOIN Personal AS Personal_2 ON Mesas.Integrante2 = Personal_2.Codigo
+WHERE (((Personal.Codigo)='${profesor}') AND ((Mesas.Turno)='${mes}') AND ((Mesas.Ano)='${fecha}')) OR 
+(((Personal_1.Codigo)='${profesor}' ) AND ((Mesas.Turno)='${mes}') AND ((Mesas.Ano)='${fecha}')) OR 
+(((Personal_2.Codigo)='${profesor}') AND ((Mesas.Turno)='${mes}') AND ((Mesas.Ano)='${fecha}'))
+ORDER BY Mesas.Fecha
+
+select permiso, documento, nombre, aniocursada from alumnos
